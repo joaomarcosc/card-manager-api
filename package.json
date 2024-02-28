@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsup src --out-dir build",
+    "start": "node build/server.js",
     "migrate:create": "node --import tsx ./node_modules/.bin/knex migrate:make",
     "migrate:run": "node --import tsx ./node_modules/.bin/knex migrate:latest",
     "migrate:down": "node --import tsx ./node_modules/.bin/knex migrate:rollback",
