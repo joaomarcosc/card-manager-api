@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "tsx watch src/server.ts",
+    "build": "tsup src --out-dir build",
     "migrate:create": "node --import tsx ./node_modules/.bin/knex migrate:make",
     "migrate:run": "node --import tsx ./node_modules/.bin/knex migrate:latest",
     "migrate:down": "node --import tsx ./node_modules/.bin/knex migrate:rollback",
@@ -22,6 +23,7 @@
     "dotenv": "^16.4.5",
     "fastify": "^4.26.1",
     "knex": "^3.1.0",
+    "pg": "^8.11.3",
     "sqlite3": "^5.1.7",
     "zod": "^3.22.4"
   },
@@ -30,6 +32,7 @@
     "@types/bcrypt": "^5.0.2",
     "@types/node": "^20.11.20",
     "eslint": "^8.57.0",
+    "tsup": "^8.0.2",
     "tsx": "^4.7.1",
     "typescript": "^5.3.3"
   }
