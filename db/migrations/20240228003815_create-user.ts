@@ -6,7 +6,7 @@ export async function up(knex: Knex): Promise<void> {
 
     table.string('name').notNullable()
     table.string('email').notNullable()
-    table.uuid('password').notNullable()
+    table.string('password').notNullable()
 
     table.timestamps(true, true)
   })
