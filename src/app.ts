@@ -1,6 +1,6 @@
 import { fastify } from 'fastify'
 import { Users } from './routes/users'
-import fastifyCookie, { FastifyCookieOptions } from '@fastify/cookie'
+import fastifyCookie from '@fastify/cookie'
 import { Auth } from './routes/auth'
 import { Cards } from './routes/cards'
 import fastifyCors from '@fastify/cors'
@@ -8,10 +8,16 @@ import fastifyCors from '@fastify/cors'
 export const app = fastify()
 
 app.register(fastifyCors, {
-  origin: true,
+  origin: '*',
   credentials: true,
   methods: ['GET', 'PUT', 'POST', 'PATCH'],
-  exposedHeaders: ['Access-Control-Allow-Credentials'],
+  allowedHeaders: [
+    'Origin',
+    'X-Requested-With',
+    'Content-Type',
+    'Accept',
+    'Authorization',
+  ],
 })
 app.register(fastifyCookie)
 app.register(Auth, {
