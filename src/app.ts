@@ -18,8 +18,11 @@ app.register(fastifyCors, {
     'Accept',
     'Authorization',
   ],
+  exposedHeaders: ['*'],
 })
-app.register(fastifyCookie)
+app.register(fastifyCookie, {
+  hook: 'preHandler',
+})
 app.register(Auth, {
   prefix: 'auth',
 })

@@ -6,10 +6,6 @@ import { z } from 'zod'
 import { checkSessionIdExists } from '../middlewares/check-session-id-exists'
 
 export async function Auth(app: FastifyInstance) {
-  // [milliseconds, seconds, hours, day, week]
-  const expiresCookieValues = [1000, 60, 60, 24, 7]
-
-  // Login function
   app.post(
     '/login',
     {
@@ -29,12 +25,9 @@ export async function Auth(app: FastifyInstance) {
 
         reply.cookie('sessionId', sessionId, {
           path: '/',
-          maxAge: expiresCookieValues.reduce(
-            (acc, currValue) => acc + currValue,
-            0,
-          ),
-          // Use https
+          httpOnly: true,
           secure: true,
+          signed: true,
         })
       }
 
