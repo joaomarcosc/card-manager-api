@@ -11,6 +11,7 @@ app.register(fastifyCors, {
   origin: true,
   credentials: true,
   methods: ['GET', 'PUT', 'POST', 'PATCH'],
+  exposedHeaders: ['Access-Control-Allow-Credentials'],
 })
 app.register(fastifyCookie)
 app.register(Auth, {
