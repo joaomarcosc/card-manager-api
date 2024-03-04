@@ -8,7 +8,7 @@ import fastifyCors from '@fastify/cors'
 export const app = fastify()
 
 app.register(fastifyCors, {
-  origin: '*',
+  origin: true,
   credentials: true,
   methods: ['GET', 'PUT', 'POST', 'PATCH'],
   allowedHeaders: [
