@@ -25,9 +25,7 @@ export async function Auth(app: FastifyInstance) {
 
         reply.cookie('sessionId', sessionId, {
           path: '/',
-          httpOnly: true,
           secure: true,
-          signed: true,
         })
       }
 
