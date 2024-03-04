@@ -10,7 +10,7 @@ export const app = fastify()
 app.register(fastifyCors, {
   origin: true,
   credentials: true,
-  methods: ['GET', 'PUT', 'POST', 'PATCH'],
+  methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE'],
   allowedHeaders: [
     'Origin',
     'X-Requested-With',
