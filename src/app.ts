@@ -1,6 +1,6 @@
 import { fastify } from 'fastify'
 import { Users } from './routes/users'
-import fastifyCookie from '@fastify/cookie'
+import fastifyCookie, { FastifyCookieOptions } from '@fastify/cookie'
 import { Auth } from './routes/auth'
 import { Cards } from './routes/cards'
 import fastifyCors from '@fastify/cors'

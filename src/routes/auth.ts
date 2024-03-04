@@ -33,6 +33,8 @@ export async function Auth(app: FastifyInstance) {
             (acc, currValue) => acc + currValue,
             0,
           ),
+          // Use https
+          secure: true,
         })
       }
 
